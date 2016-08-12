@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A1268C2C1D5DC3A900D39D88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C2B1D5DC3A900D39D88 /* AppDelegate.swift */; };
-		A1268C2E1D5DC3A900D39D88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C2D1D5DC3A900D39D88 /* ViewController.swift */; };
-		A1268C311D5DC3A900D39D88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1268C2F1D5DC3A900D39D88 /* Main.storyboard */; };
 		A1268C331D5DC3A900D39D88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1268C321D5DC3A900D39D88 /* Assets.xcassets */; };
 		A1268C361D5DC3A900D39D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1268C341D5DC3A900D39D88 /* LaunchScreen.storyboard */; };
 		A1268C411D5DC3A900D39D88 /* TTTransitionAnimateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C401D5DC3A900D39D88 /* TTTransitionAnimateTests.swift */; };
 		A1268C4C1D5DC3A900D39D88 /* TTTransitionAnimateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C4B1D5DC3A900D39D88 /* TTTransitionAnimateUITests.swift */; };
+		A1268C5A1D5DC81400D39D88 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C591D5DC81300D39D88 /* TabBarController.swift */; };
+		A1268C5C1D5DC8A800D39D88 /* AViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C5B1D5DC8A800D39D88 /* AViewController.swift */; };
+		A1268C5E1D5DC8B500D39D88 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C5D1D5DC8B500D39D88 /* BViewController.swift */; };
+		A1268C641D5DC9FA00D39D88 /* ANavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */; };
+		A1268C661D5DCA1000D39D88 /* BNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C651D5DCA1000D39D88 /* BNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +39,6 @@
 /* Begin PBXFileReference section */
 		A1268C281D5DC3A900D39D88 /* TTTransitionAnimate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTTransitionAnimate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1268C2B1D5DC3A900D39D88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1268C2D1D5DC3A900D39D88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A1268C301D5DC3A900D39D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1268C321D5DC3A900D39D88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1268C351D5DC3A900D39D88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1268C371D5DC3A900D39D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,11 @@
 		A1268C471D5DC3A900D39D88 /* TTTransitionAnimateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TTTransitionAnimateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1268C4B1D5DC3A900D39D88 /* TTTransitionAnimateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTransitionAnimateUITests.swift; sourceTree = "<group>"; };
 		A1268C4D1D5DC3A900D39D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1268C591D5DC81300D39D88 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A1268C5B1D5DC8A800D39D88 /* AViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AViewController.swift; sourceTree = "<group>"; };
+		A1268C5D1D5DC8B500D39D88 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ANavigationViewController.swift; sourceTree = "<group>"; };
+		A1268C651D5DCA1000D39D88 /* BNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				A1268C2B1D5DC3A900D39D88 /* AppDelegate.swift */,
-				A1268C2D1D5DC3A900D39D88 /* ViewController.swift */,
-				A1268C2F1D5DC3A900D39D88 /* Main.storyboard */,
+				A1268C591D5DC81300D39D88 /* TabBarController.swift */,
+				A1268C5B1D5DC8A800D39D88 /* AViewController.swift */,
+				A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */,
+				A1268C5D1D5DC8B500D39D88 /* BViewController.swift */,
+				A1268C651D5DCA1000D39D88 /* BNavigationViewController.swift */,
 				A1268C321D5DC3A900D39D88 /* Assets.xcassets */,
 				A1268C341D5DC3A900D39D88 /* LaunchScreen.storyboard */,
 				A1268C371D5DC3A900D39D88 /* Info.plist */,
@@ -231,7 +240,6 @@
 			files = (
 				A1268C361D5DC3A900D39D88 /* LaunchScreen.storyboard in Resources */,
 				A1268C331D5DC3A900D39D88 /* Assets.xcassets in Resources */,
-				A1268C311D5DC3A900D39D88 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1268C2E1D5DC3A900D39D88 /* ViewController.swift in Sources */,
+				A1268C661D5DCA1000D39D88 /* BNavigationViewController.swift in Sources */,
+				A1268C5C1D5DC8A800D39D88 /* AViewController.swift in Sources */,
+				A1268C5A1D5DC81400D39D88 /* TabBarController.swift in Sources */,
+				A1268C641D5DC9FA00D39D88 /* ANavigationViewController.swift in Sources */,
+				A1268C5E1D5DC8B500D39D88 /* BViewController.swift in Sources */,
 				A1268C2C1D5DC3A900D39D88 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,14 +305,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A1268C2F1D5DC3A900D39D88 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A1268C301D5DC3A900D39D88 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A1268C341D5DC3A900D39D88 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -482,6 +486,7 @@
 				A1268C521D5DC3A900D39D88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1268C531D5DC3A900D39D88 /* Build configuration list for PBXNativeTarget "TTTransitionAnimateTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +495,7 @@
 				A1268C551D5DC3A900D39D88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A1268C561D5DC3A900D39D88 /* Build configuration list for PBXNativeTarget "TTTransitionAnimateUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +504,7 @@
 				A1268C581D5DC3A900D39D88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
