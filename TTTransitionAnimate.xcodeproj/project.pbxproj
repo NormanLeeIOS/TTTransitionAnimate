@@ -17,6 +17,7 @@
 		A1268C5E1D5DC8B500D39D88 /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C5D1D5DC8B500D39D88 /* BViewController.swift */; };
 		A1268C641D5DC9FA00D39D88 /* ANavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */; };
 		A1268C661D5DCA1000D39D88 /* BNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C651D5DCA1000D39D88 /* BNavigationViewController.swift */; };
+		A1268C681D5DD1E200D39D88 /* ATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C671D5DD1E200D39D88 /* ATableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		A1268C5D1D5DC8B500D39D88 /* BViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ANavigationViewController.swift; sourceTree = "<group>"; };
 		A1268C651D5DCA1000D39D88 /* BNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNavigationViewController.swift; sourceTree = "<group>"; };
+		A1268C671D5DD1E200D39D88 /* ATableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				A1268C591D5DC81300D39D88 /* TabBarController.swift */,
 				A1268C5B1D5DC8A800D39D88 /* AViewController.swift */,
 				A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */,
+				A1268C671D5DD1E200D39D88 /* ATableViewCell.swift */,
 				A1268C5D1D5DC8B500D39D88 /* BViewController.swift */,
 				A1268C651D5DCA1000D39D88 /* BNavigationViewController.swift */,
 				A1268C321D5DC3A900D39D88 /* Assets.xcassets */,
@@ -270,6 +273,7 @@
 				A1268C641D5DC9FA00D39D88 /* ANavigationViewController.swift in Sources */,
 				A1268C5E1D5DC8B500D39D88 /* BViewController.swift in Sources */,
 				A1268C2C1D5DC3A900D39D88 /* AppDelegate.swift in Sources */,
+				A1268C681D5DD1E200D39D88 /* ATableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
