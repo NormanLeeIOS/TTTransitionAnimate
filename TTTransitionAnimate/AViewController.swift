@@ -12,14 +12,23 @@ class AViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         var tempTableView = UITableView(frame: self.view.frame)
+        tempTableView.delegate = self
+        tempTableView.dataSource = self
         return tempTableView
+    }()
+    
+    private lazy var navigationBar: UINavigationBar = {
+        var tempNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 320, height: 64))
+        return tempNavigationBar
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.view.backgroundColor = UIColor.whiteColor()
-        tableView.delegate = self
+
         self.view.addSubview(tableView)
+        self.view.addSubview(navigationBar)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,23 +48,30 @@ extension AViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let identifier = "Cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(identifier)
-//        if cell == nil {
-//            cell = UITableViewCell(style: .Value1, reuseIdentifier: identifier)
-//        }
-//        
-//        cell?.textLabel?.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.2)
-//        cell?.textLabel?.text = "这不是扯淡么..."
-//        cell?.textLabel?.textColor = UIColor.darkTextColor()
-//        cell?.selectionStyle = .Default
+        let cellIdentifier = "Cell"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        if cell == nil {
+            cell = ATableViewCell(style: .Value1, reuseIdentifier: cellIdentifier)
+        }
+        cell?.selectionStyle = .Default
     
         return cell!
         
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let a2bVC = ABViewController()
+        a2bVC.transitioningDelegate = self
+//        self.navigationController?.pushViewController(a2bVC, animated: true)
+        self.navigationController?.presentViewController(a2bVC, animated: true, completion: nil)
     }
     
 }
+
+extension AViewController: UIViewControllerTransitioningDelegate {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ModalTransitionDelegate.animationControllerForPresentedController(presented, presentingController: presenting, sourceController: source)
+    }
+}
+

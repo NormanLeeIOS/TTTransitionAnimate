@@ -20,14 +20,14 @@ class TabBarController: UITabBarController {
         
         self.view.backgroundColor = UIColor.whiteColor()
         let firstVC = AViewController()
-        let firstNavi = ANavigationViewController()
+        let firstNavi = ANavigationViewController(rootViewController: firstVC)
         firstNavi.viewControllers = [firstVC]
         
         let secondVC = BViewController()
-        let secondNavi = BNavigationViewController()
+        let secondNavi = BNavigationViewController(rootViewController: secondVC)
         secondNavi.viewControllers = [secondVC]
         
-        self.viewControllers = [firstVC, secondVC]
+        self.viewControllers = [firstNavi, secondNavi]
         
         UITabBar.appearance().tintColor = UIColor.redColor()
         
