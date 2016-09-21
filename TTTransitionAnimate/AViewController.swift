@@ -10,14 +10,14 @@ import UIKit
 
 class AViewController: UIViewController {
     
-    private lazy var tableView: UITableView = {
+    fileprivate lazy var tableView: UITableView = {
         var tempTableView = UITableView(frame: self.view.frame)
         tempTableView.delegate = self
         tempTableView.dataSource = self
         return tempTableView
     }()
     
-    private lazy var navigationBar: UINavigationBar = {
+    fileprivate lazy var navigationBar: UINavigationBar = {
         var tempNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 320, height: 64))
         return tempNavigationBar
     }()
@@ -25,7 +25,7 @@ class AViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
 
         self.view.addSubview(tableView)
         self.view.addSubview(navigationBar)
@@ -39,38 +39,38 @@ class AViewController: UIViewController {
 
 extension AViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         if cell == nil {
-            cell = ATableViewCell(style: .Value1, reuseIdentifier: cellIdentifier)
+            cell = ATableViewCell(style: .value1, reuseIdentifier: cellIdentifier)
         }
-        cell?.selectionStyle = .Default
+        cell?.selectionStyle = .default
     
         return cell!
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let a2bVC = ABViewController()
         a2bVC.transitioningDelegate = self
 //        self.navigationController?.pushViewController(a2bVC, animated: true)
-        self.navigationController?.presentViewController(a2bVC, animated: true, completion: nil)
+        self.navigationController?.present(a2bVC, animated: true, completion: nil)
     }
     
 }
 
 extension AViewController: UIViewControllerTransitioningDelegate {
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return ModalTransitionDelegate.animationControllerForPresentedController(presented, presentingController: presenting, sourceController: source)
     }
 }

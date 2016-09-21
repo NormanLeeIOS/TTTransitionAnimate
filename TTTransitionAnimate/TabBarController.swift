@@ -10,7 +10,7 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    private static let shareInstance = TabBarController()
+    fileprivate static let shareInstance = TabBarController()
     class var shareTab: TabBarController {
         return shareInstance
     }
@@ -18,7 +18,7 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         let firstVC = AViewController()
         let firstNavi = ANavigationViewController(rootViewController: firstVC)
         firstNavi.viewControllers = [firstVC]
@@ -29,7 +29,7 @@ class TabBarController: UITabBarController {
         
         self.viewControllers = [firstNavi, secondNavi]
         
-        UITabBar.appearance().tintColor = UIColor.redColor()
+        UITabBar.appearance().tintColor = UIColor.red
         
         let firstBar = self.tabBar.items![0]
         firstBar.title = "首页"

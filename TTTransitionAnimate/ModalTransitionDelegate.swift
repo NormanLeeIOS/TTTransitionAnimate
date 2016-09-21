@@ -10,8 +10,8 @@ import UIKit
 
 class ModalTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate {
     // 实现协议方法
-    static func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let transitionType = TransitionType.ModalTransition(.Present)
+    static func animationControllerForPresentedController(_ presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let transitionType = TransitionType.modalTransition(.present)
         return ModalAnimationController(type: transitionType)
     }
 }

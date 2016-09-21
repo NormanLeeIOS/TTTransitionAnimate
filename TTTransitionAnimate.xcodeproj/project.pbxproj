@@ -214,13 +214,19 @@
 				TargetAttributes = {
 					A1268C271D5DC3A900D39D88 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 35B2KE884X;
+						LastSwiftMigration = 0800;
 					};
 					A1268C3B1D5DC3A900D39D88 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 35B2KE884X;
+						LastSwiftMigration = 0800;
 						TestTargetID = A1268C271D5DC3A900D39D88;
 					};
 					A1268C461D5DC3A900D39D88 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 35B2KE884X;
+						LastSwiftMigration = 0800;
 						TestTargetID = A1268C271D5DC3A900D39D88;
 					};
 				};
@@ -419,10 +425,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 35B2KE884X;
 				INFOPLIST_FILE = TTTransitionAnimate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = netease.TTTransitionAnimate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -430,10 +439,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 35B2KE884X;
 				INFOPLIST_FILE = TTTransitionAnimate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = netease.TTTransitionAnimate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -441,10 +453,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 35B2KE884X;
 				INFOPLIST_FILE = TTTransitionAnimateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = netease.TTTransitionAnimateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TTTransitionAnimate.app/TTTransitionAnimate";
 			};
 			name = Debug;
@@ -453,10 +467,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 35B2KE884X;
 				INFOPLIST_FILE = TTTransitionAnimateTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = netease.TTTransitionAnimateTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TTTransitionAnimate.app/TTTransitionAnimate";
 			};
 			name = Release;
@@ -464,10 +480,12 @@
 		A1268C571D5DC3A900D39D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 35B2KE884X;
 				INFOPLIST_FILE = TTTransitionAnimateUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = netease.TTTransitionAnimateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TTTransitionAnimate;
 			};
 			name = Debug;
@@ -475,10 +493,12 @@
 		A1268C581D5DC3A900D39D88 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 35B2KE884X;
 				INFOPLIST_FILE = TTTransitionAnimateUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = netease.TTTransitionAnimateUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TTTransitionAnimate;
 			};
 			name = Release;
