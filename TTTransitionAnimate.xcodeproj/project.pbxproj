@@ -18,7 +18,6 @@
 		A1268C641D5DC9FA00D39D88 /* ANavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */; };
 		A1268C661D5DCA1000D39D88 /* BNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C651D5DCA1000D39D88 /* BNavigationViewController.swift */; };
 		A1268C681D5DD1E200D39D88 /* ATableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1268C671D5DD1E200D39D88 /* ATableViewCell.swift */; };
-		A149AC411D780FA4000721E1 /* ModalTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149AC401D780FA4000721E1 /* ModalTransitionDelegate.swift */; };
 		A149AC431D7811DA000721E1 /* ModalAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149AC421D7811DA000721E1 /* ModalAnimationController.swift */; };
 		A16104151D616FB00031A989 /* ABViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16104141D616FB00031A989 /* ABViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +57,6 @@
 		A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ANavigationViewController.swift; sourceTree = "<group>"; };
 		A1268C651D5DCA1000D39D88 /* BNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNavigationViewController.swift; sourceTree = "<group>"; };
 		A1268C671D5DD1E200D39D88 /* ATableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ATableViewCell.swift; sourceTree = "<group>"; };
-		A149AC401D780FA4000721E1 /* ModalTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTransitionDelegate.swift; sourceTree = "<group>"; };
 		A149AC421D7811DA000721E1 /* ModalAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalAnimationController.swift; sourceTree = "<group>"; };
 		A16104141D616FB00031A989 /* ABViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,7 +114,6 @@
 				A1268C5B1D5DC8A800D39D88 /* AViewController.swift */,
 				A1268C631D5DC9FA00D39D88 /* ANavigationViewController.swift */,
 				A16104141D616FB00031A989 /* ABViewController.swift */,
-				A149AC401D780FA4000721E1 /* ModalTransitionDelegate.swift */,
 				A149AC421D7811DA000721E1 /* ModalAnimationController.swift */,
 				A1268C671D5DD1E200D39D88 /* ATableViewCell.swift */,
 				A1268C5D1D5DC8B500D39D88 /* BViewController.swift */,
@@ -209,7 +206,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = NormanLeeIOS;
 				TargetAttributes = {
 					A1268C271D5DC3A900D39D88 = {
@@ -287,7 +284,6 @@
 				A1268C5A1D5DC81400D39D88 /* TabBarController.swift in Sources */,
 				A16104151D616FB00031A989 /* ABViewController.swift in Sources */,
 				A1268C641D5DC9FA00D39D88 /* ANavigationViewController.swift in Sources */,
-				A149AC411D780FA4000721E1 /* ModalTransitionDelegate.swift in Sources */,
 				A149AC431D7811DA000721E1 /* ModalAnimationController.swift in Sources */,
 				A1268C5E1D5DC8B500D39D88 /* BViewController.swift in Sources */,
 				A1268C2C1D5DC3A900D39D88 /* AppDelegate.swift in Sources */,
@@ -352,8 +348,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -397,8 +395,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -417,6 +417,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

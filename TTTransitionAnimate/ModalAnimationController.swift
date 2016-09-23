@@ -8,17 +8,17 @@
 
 import UIKit
 
-enum TransitionType{
+public enum TransitionType{
 //    case NavigationTransition(UINavigationControllerOperation)  // todo...
 //    case TabTransition(TabOperationDirection)                   // todo...
     case modalTransition(ModalOperation)
 }
 
-enum TabOperationDirection: Int{
+public enum TabOperationDirection: Int{
     case left, right
 }
 
-enum ModalOperation: Int{
+public enum ModalOperation: Int{
     case present, pop, dismiss
 }
 
@@ -27,21 +27,23 @@ open class ModalAnimationController: NSObject {
     /// bubble properties
     open fileprivate(set) var bubble = UIView()
     open var bubbleColor = UIColor.white
-    open var startingPoint = CGPoint.zero {
+    open var captureScreen = UIImage()
+    open var startingRect = CGRect() {
         didSet {
-            bubble.center = startingPoint
+            bubble.frame = startingRect;
+            bubble.center = CGPoint(x: startingRect.midX, y: startingRect.midY)
         }
     }
     
-    fileprivate var transitionType: TransitionType
+    open var transitionType: TransitionType = TransitionType.modalTransition(ModalOperation.present)
     
-    init(type: TransitionType) {
-        transitionType = type
+    override init() {
         super.init()
     }
 }
 
 extension ModalAnimationController: UIViewControllerAnimatedTransitioning {
+    
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
               let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
@@ -52,16 +54,16 @@ extension ModalAnimationController: UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         let fromView = fromVC.view
         let toView = toVC.view
+    
+        // 设置bubble效果
+        toView?.frame = startingRect
+        toView?.clipsToBounds = true
+
         
-        // 让toView到屏幕的最下方
-        let frame = transitionContext .initialFrame(for: fromVC)
-        var offScreenFrame = frame
-        offScreenFrame.origin.y = offScreenFrame.size.height
-        toView?.frame = offScreenFrame
         containerView.insertSubview(toView!, aboveSubview: fromView!)
         
+        let frame = transitionContext .initialFrame(for: fromVC)
         let t1 = self.fromViewTransform()
-        let t2 = self.toViewTransform(fromView!)
     
         switch transitionType {
         case .modalTransition(let operation):
@@ -75,21 +77,15 @@ extension ModalAnimationController: UIViewControllerAnimatedTransitioning {
                             fromView?.alpha = 0.6
                         })
                         
-                        // fromView第二个动画
-                        UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.4, animations: {
-                            fromView?.layer.transform = t2
-                        })
-                        
                         // toView弹出动画
-                        UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
+                        UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.4, animations: {
                             toView?.frame = frame
                         })
                         
                         }, completion: { (finished) in
-                            // 还原
+                            // fromView还原
                             fromView?.transform = CGAffineTransform.identity
-                            fromView?.alpha = 1.0
-                            toView?.transform = CGAffineTransform.identity
+                            fromView?.alpha = 1
                             
                             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
                     })
@@ -112,18 +108,8 @@ extension ModalAnimationController: UIViewControllerAnimatedTransitioning {
 private extension ModalAnimationController {
     func fromViewTransform() -> CATransform3D {
         var t1 = CATransform3DIdentity
-        t1.m34 = 1.0 / -900
-        t1 = CATransform3DScale(t1, 0.95, 0.95, 1)
-        t1 = CATransform3DRotate(t1, 15.0 * CGFloat(M_PI/180.0), 1, 0, 0)
+        t1 = CATransform3DScale(t1, 0.9, 0.9, 1)
         return t1
-    }
-    
-    func toViewTransform(_ view: UIView) -> CATransform3D {
-        var t2 = CATransform3DIdentity
-        t2.m34 = self.fromViewTransform().m34
-        t2 = CATransform3DTranslate(t2, 0, view.frame.size.height * (-0.08), 0)
-        t2 = CATransform3DScale(t2, 0.8, 0.8, 1)
-        return t2
     }
     
     func frameForBubble(_ originalCenter: CGPoint, size originalSize: CGSize, start: CGPoint) -> CGRect {

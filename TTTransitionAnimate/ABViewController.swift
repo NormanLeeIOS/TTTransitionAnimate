@@ -15,12 +15,11 @@ class ABViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.blue
-        
-        backBtn = UIButton(frame: CGRect(x: self.view.frame.width/2 - 50, y: self.view.frame.height/2 - 25, width: 100, height: 50))
-        backBtn.setTitle("后退", for: UIControlState())
+        self.view.backgroundColor = UIColor.white
+        backBtn = UIButton(frame: CGRect(x: 10, y: 0, width: self.view.frame.width - 20, height: 40))
+        backBtn.setTitle("this is a textLabel this is a detailTextLabel", for: UIControlState())
+        backBtn.setTitleColor(UIColor.black, for: UIControlState())
         backBtn.addTarget(self, action: #selector(ABViewController.back), for: .touchUpInside)
-        backBtn.backgroundColor = UIColor.yellow.withAlphaComponent(0.2)
         self.view.addSubview(backBtn)
     }
 

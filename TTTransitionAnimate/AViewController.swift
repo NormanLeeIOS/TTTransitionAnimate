@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class AViewController: UIViewController {
     
@@ -21,6 +22,10 @@ class AViewController: UIViewController {
         var tempNavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 320, height: 64))
         return tempNavigationBar
     }()
+    
+    fileprivate let transition = ModalAnimationController()
+    fileprivate var presentStartCGRect = CGRect()
+    fileprivate var presentCaptureView = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,17 +66,37 @@ extension AViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
         let a2bVC = ABViewController()
         a2bVC.transitioningDelegate = self
-//        self.navigationController?.pushViewController(a2bVC, animated: true)
         self.navigationController?.present(a2bVC, animated: true, completion: nil)
     }
     
 }
 
+extension AViewController {
+    func tableViewTransformAnimation(_ tableView: UITableView, indexPath: IndexPath) {
+        let rectOfCellInTableView = tableView.rectForRow(at: indexPath)
+        presentStartCGRect = tableView.convert(rectOfCellInTableView, to: tableView.superview)
+        let cellInTableView = tableView.cellForRow(at: indexPath)
+        presentCaptureView = AViewController.captureImage(cellInTableView!)
+    }
+    
+    static func captureImage(_ view: UIView) -> UIImage {
+        UIGraphicsBeginImageContext(view.bounds.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img!
+    }
+}
+
 extension AViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ModalTransitionDelegate.animationControllerForPresentedController(presented, presentingController: presenting, sourceController: source)
+        transition.transitionType = TransitionType.modalTransition(.present)
+        transition.startingRect = presentStartCGRect
+        transition.captureScreen = presentCaptureView
+        return transition
     }
 }
 
